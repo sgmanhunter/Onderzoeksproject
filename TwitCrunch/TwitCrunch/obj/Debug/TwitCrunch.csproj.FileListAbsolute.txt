@@ -17,3 +17,5 @@ D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.Propertie
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.csproj.GenerateResource.Cache
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.exe
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.pdb
+D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TweetSharp.dll
+D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Hammock.ClientProfile.dll

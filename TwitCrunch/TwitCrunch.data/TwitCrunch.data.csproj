@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\TwitCrunch\lib\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\TwitCrunch\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -40,14 +43,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Twitterizer.Data">
-      <HintPath>..\TwitCrunch\lib\Twitterizer.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Twitterizer2">
-      <HintPath>..\TwitCrunch\lib\Twitterizer2.dll</HintPath>
-    </Reference>
-    <Reference Include="Twitterizer2.Streaming">
-      <HintPath>..\TwitCrunch\lib\Twitterizer2.Streaming.dll</HintPath>
+    <Reference Include="TweetSharp">
+      <HintPath>..\TwitCrunch\lib\TweetSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

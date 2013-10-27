@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Twitterizer;
+using TweetSharp;
+
 
 namespace TwitCrunch.data
 {
@@ -19,9 +22,7 @@ namespace TwitCrunch.data
         }
 
         private string _consumerKey, _consumerSecret;
-        private string _accessKey, _accessSecret;
-        private string _oathAuthorizeLink = @"https://api.twitter.com/oauth/authorize?oauth_token=";
-        private string _pin;
+        private string _accessToken, _accessTokenSecret;
 
         public string ConsumerKey 
         { 
@@ -37,28 +38,21 @@ namespace TwitCrunch.data
                 _consumerSecret = value;
             }
         }
-        public string AccessKey
+        public string AccessToken
         {
             set
             {
-                _accessKey = value;
+                _accessToken = value;
             }
         }
-        public string AccessSecret
+        public string AccessTokenSecret
         {
             set
             {
-                _accessSecret = value;
+                _accessTokenSecret = value;
             }
         }
-        public string Pin 
-        {
-            set
-            {
-                _pin = value;
-            }
-        }
-
+ 
 
         private User()
         {}
@@ -66,23 +60,25 @@ namespace TwitCrunch.data
 
         public void Connect()
         {
-           /* OAuthTokenResponse tokenResponse = new OAuthTokenResponse();
-            tokenResponse = OAuthUtility.GetRequestToken(_consumerKey, _consumerSecret,"oob");
-            string target = _oathAuthorizeLink + tokenResponse.Token;
-            try
-            {
-                System.Diagnostics.Process.Start(target);
-            }
-            catch (System.ComponentModel.Win32Exception noBrowser)
-            {
-                //if (noBrowser.ErrorCode == -2147467259)
-            }
-            catch (System.Exception other)
-            {
-                //
-            }
-            tokenResponse = OAuthUtility.GetAccessToken(_consumerKey, _consumerSecret, tokenResponse.Token, _pin);*/
+            // Pass your credentials to the service
+            TwitterService service = new TwitterService(_consumerKey, _consumerSecret);
 
+            // Step 1 - Retrieve an OAuth Request Token
+            OAuthRequestToken requestToken = service.GetRequestToken("oob");
+
+            // Step 2 - Redirect to the OAuth Authorization URL
+            Uri uri = service.GetAuthorizationUri(requestToken);
+            Process.Start(uri.ToString());
+
+            // Step 3 - Exchange the Request Token for an Access Token
+            string verifier = "123456"; // <-- This is input into your application by your user
+            OAuthAccessToken access = service.GetAccessToken(requestToken, verifier);
+
+            // Step 4 - User authenticates using the Access Token
+            service.AuthenticateWith(access.Token, access.TokenSecret);
+            //IEnumerable<TwitterStatus> mentions = service.ListTweetsMentioningMe();
+
+           
         }
 
     }

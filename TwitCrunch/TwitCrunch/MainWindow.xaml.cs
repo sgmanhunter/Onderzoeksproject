@@ -23,11 +23,10 @@ namespace TwitCrunch
     public partial class MainWindow : Window
     {
 
-        private string _consumerKey = "T3TaQWzzZiVrihJW0GLBg";
-        private string _consumerSecret = "OJo28FZzFfXZtFcVOF1FDJpiOpatQMQSvI4aetQ";
-        private string _accessKey = "2159075078-0NdpXHjpvi46rFpBw3iAx2SGhU0i8LunCGsJCsd";
-        private string _accessSecret = "fg4E3KIi0wJy8kmu8RR2lI2WhuS5VoIuy5AwVtPxPvjua";
-        private string _pin = "YU2HFbPJe2LES8wmKvKn";
+        private string _consumerKey = "c7g4rHrnerkTPBjdba0Kw";
+        private string _consumerSecret = "1IO7eiGYSLaKKpErzfbgRYAEF5KUe7LZrtMz2FAgSFI";
+        private string _accessToken = "2159075078-cRSaEeEgFWThXBx49tykpGyILtkxlhefdFcisk8";
+        private string _accessTokenSecret = "r9XobK34W2OL5UUVdyDLq5E34t8Xe0AVEljRWdju6m491";
 
         private User _user = User.Singleton;
 
@@ -37,9 +36,8 @@ namespace TwitCrunch
 
             _user.ConsumerKey = _consumerKey;
             _user.ConsumerSecret = _consumerSecret;
-            _user.AccessKey = _accessKey;
-            _user.ConsumerSecret = _accessSecret;
-            _user.Pin = _pin;
+            _user.AccessToken = _accessToken;
+            _user.AccessTokenSecret = _accessTokenSecret;
 
             _user.Connect();
         }
