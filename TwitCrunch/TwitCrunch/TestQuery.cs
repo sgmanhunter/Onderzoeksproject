@@ -11,12 +11,13 @@ namespace TwitCrunch
     {
         private String consumerKey = "T3TaQWzzZiVrihJW0GLBg";
         private String consumerSecret = "OJo28FZzFfXZtFcVOF1FDJpiOpatQMQSvI4aetQ";
-
+        private String accessKey = "2159075078-0NdpXHjpvi46rFpBw3iAx2SGhU0i8LunCGsJCsd";
+        private String accessSecret = "fg4E3KIi0wJy8kmu8RR2lI2WhuS5VoIuy5AwVtPxPvjua";
 
         public List<TwitterSearchResult> queryTwitter()
         {
 
-            OAuthTokenResponse accessTokenResponse = OAuthUtility.GetAccessToken(consumerKey, consumerSecret, "2159075078-0NdpXHjpvi46rFpBw3iAx2SGhU0i8LunCGsJCsd", null);
+            OAuthTokenResponse accessTokenResponse = OAuthUtility.GetAccessToken(consumerKey, consumerSecret, accessKey, accessSecret);
 
             OAuthTokens tokens = new OAuthTokens();
             tokens.AccessToken = accessTokenResponse.Token;
