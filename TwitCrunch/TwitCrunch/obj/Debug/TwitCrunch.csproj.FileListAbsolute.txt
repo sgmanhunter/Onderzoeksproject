@@ -1,1 +1,2 @@
 D:\GitHub\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe.config
+D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe.config
