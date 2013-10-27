@@ -9,7 +9,14 @@ namespace TwitCrunch
 {
     class TestQuery
     {
-        OAuthTokenResponse accessTokenResponse = OAuthUtility.GetAccessToken("T3TaQWzzZiVrihJW0GLBg", "OJo28FZzFfXZtFcVOF1FDJpiOpatQMQSvI4aetQ", "2159075078-0NdpXHjpvi46rFpBw3iAx2SGhU0i8LunCGsJCsd",null);
+        private String consumerKey = "T3TaQWzzZiVrihJW0GLBg";
+        private String consumerSecret = "OJo28FZzFfXZtFcVOF1FDJpiOpatQMQSvI4aetQ";
+
+
+        public List<TwitterSearchResult> queryTwitter()
+        {
+
+            OAuthTokenResponse accessTokenResponse = OAuthUtility.GetAccessToken(consumerKey, consumerSecret, "2159075078-0NdpXHjpvi46rFpBw3iAx2SGhU0i8LunCGsJCsd", null);
 
             OAuthTokens tokens = new OAuthTokens();
             tokens.AccessToken = accessTokenResponse.Token;
@@ -18,9 +25,11 @@ namespace TwitCrunch
             tokens.ConsumerSecret = consumerSecret;
 
 
-            TwitterResponse<TwitterSearchResultCollection> tr = TwitterSearch.Search("your query");
+            TwitterResponse<TwitterSearchResultCollection> tr = TwitterSearch.Search("#twitter");
 
-        TwitterSearchResultCollection results= tr.ResponseObject;
-        List<TwitterSearchResult> resultList= results.ToList();
+            TwitterSearchResultCollection results = tr.ResponseObject;
+            return results.ToList();
+        }
+
     }
 }

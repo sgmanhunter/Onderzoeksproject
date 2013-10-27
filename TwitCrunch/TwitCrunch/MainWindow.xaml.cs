@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Twitterizer;
 
 namespace TwitCrunch
 {
@@ -23,6 +24,8 @@ namespace TwitCrunch
         public MainWindow()
         {
             InitializeComponent();
+            TestQuery tq = new TestQuery();
+            List<TwitterSearchResult> qq = tq.queryTwitter();
         }
     }
 }
