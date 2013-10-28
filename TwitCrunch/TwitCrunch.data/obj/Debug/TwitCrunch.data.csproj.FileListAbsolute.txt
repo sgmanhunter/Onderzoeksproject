@@ -1,8 +1,7 @@
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TwitCrunch.data.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TwitCrunch.data.pdb
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.pdb
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Hammock.ClientProfile.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Newtonsoft.Json.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TweetSharp.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.csprojResolveAssemblyReference.cache
+D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.dll
+D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.pdb

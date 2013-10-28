@@ -22,6 +22,7 @@ namespace TwitCrunch
     ///
     public partial class MainWindow : Window
     {
+       
 
         private string _consumerKey = "c7g4rHrnerkTPBjdba0Kw";
         private string _consumerSecret = "1IO7eiGYSLaKKpErzfbgRYAEF5KUe7LZrtMz2FAgSFI";
@@ -39,7 +40,7 @@ namespace TwitCrunch
             _user.AccessToken = _accessToken;
             _user.AccessTokenSecret = _accessTokenSecret;
 
-            _user.Connect();
+            //_user.Connect();
         }
     }
 }
