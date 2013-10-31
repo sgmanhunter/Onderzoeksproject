@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -13,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TwitCrunch.data;
+
 
 namespace TwitCrunch
 {
@@ -29,6 +32,8 @@ namespace TwitCrunch
         private string _accessToken = "2159075078-cRSaEeEgFWThXBx49tykpGyILtkxlhefdFcisk8";
         private string _accessTokenSecret = "r9XobK34W2OL5UUVdyDLq5E34t8Xe0AVEljRWdju6m491";
 
+        private TextBlock _sbStatus;
+
         private User _user = User.Singleton;
 
         public MainWindow()
@@ -39,8 +44,13 @@ namespace TwitCrunch
             _user.ConsumerSecret = _consumerSecret;
             _user.AccessToken = _accessToken;
             _user.AccessTokenSecret = _accessTokenSecret;
-
             //_user.Connect();
+
+            // To get the statusbar that is coded into the style template (TwitterCrunchWindow) we must first load it before we initialise this window
+            this.ApplyTemplate();
+
+            _sbStatus = this.GetTemplateChild("tbStatus") as TextBlock;
+            _sbStatus.Text = Assembly.GetEntryAssembly().GetName().Version.ToString();
         }
     }
 }

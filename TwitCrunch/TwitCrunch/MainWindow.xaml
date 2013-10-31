@@ -8,13 +8,14 @@
         Style="{DynamicResource TwitterChrunchWindow}" >
     
     <Window.Resources>
+        <!-- Dictionaries-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Metro/Light/Metro.MSControls.Core.Implicit.xaml" />
                 <ResourceDictionary Source="Themes/TwitterCrunch.ControlStyles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>           
-        </ResourceDictionary>
-    </Window.Resources>   
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>    
+    </Window.Resources>    
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -30,8 +31,29 @@
         <TextBlock Text="#" Style="{DynamicResource HeaderTextBlockStyle}" FontSize="72" TextAlignment="Right" />
         <TextBox x:Name="txtSearchTerm" Grid.Column="1" HorizontalAlignment="Left" Height="52" Margin="0,23,0,0" Width="427" FontSize="30" Style="{StaticResource searchTextBoxStyle}" />
         <Button x:Name="btnSearch" Content="Crunch" Grid.Column="1" Margin="449,23,1,0"  Width="108" Height="52"/>
-       
-       
+
+        <TabControl Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource TwitterCrunch.TabControl}" Margin="0,20,0,0">
+            <TabItem Header="#zoekterm1" Style="{DynamicResource TwitterCrunch.TabItem}">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Zoekterm 1 data" Foreground="Black" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="#zoekterm2" Style="{DynamicResource TwitterCrunch.TabItem}">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Zoekterm 2 data" Foreground="Black" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="#zoekterm3" Style="{DynamicResource TwitterCrunch.TabItem}">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Zoekterm 3 data" Foreground="Black" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="#zoekterm4" Style="{DynamicResource TwitterCrunch.TabItem}">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Zoekterm 4 data" Foreground="Black" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
