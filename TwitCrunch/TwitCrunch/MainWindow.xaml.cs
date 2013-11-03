@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -14,7 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TwitCrunch.CustomControls;
 using TwitCrunch.data;
+using TwitCrunch.Tools;
 
 
 namespace TwitCrunch
@@ -34,23 +37,50 @@ namespace TwitCrunch
 
         private TextBlock _sbStatus;
 
-        private User _user = User.Singleton;
+        private ApplicationCredentials _appCred = ApplicationCredentials.Singleton;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            _user.ConsumerKey = _consumerKey;
-            _user.ConsumerSecret = _consumerSecret;
-            _user.AccessToken = _accessToken;
-            _user.AccessTokenSecret = _accessTokenSecret;
-            //_user.Connect();
+            Title += " "+Diagnosis.GetVersionNumber();
+
+            _appCred.ConsumerKey = _consumerKey;
+            _appCred.ConsumerSecret = _consumerSecret;
+            _appCred.AccessToken = _accessToken;
+            _appCred.AccessTokenSecret = _accessTokenSecret;
 
             // To get the statusbar that is coded into the style template (TwitterCrunchWindow) we must first load it before we initialise this window
             this.ApplyTemplate();
-
             _sbStatus = this.GetTemplateChild("tbStatus") as TextBlock;
-            _sbStatus.Text = Assembly.GetEntryAssembly().GetName().Version.ToString();
+
+            UpdateStatusBarInfo();
+        }
+
+
+        private void UpdateStatusBarInfo()
+        {
+            if (_sbStatus != null)
+            {
+                string memory = Diagnosis.GetMemoryUsage();
+                string threadCount = Diagnosis.GetThreadCount();
+                _sbStatus.Text = string.Format("{0} Memory used \t {1} Threads", memory, threadCount);
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string searchWord = txtSearchTerm.Text;
+            txtSearchTerm.Text = String.Empty;
+            AddTwitterCrunchTabItem(searchWord);
+        }
+
+        private void AddTwitterCrunchTabItem(string searchWord)
+        {
+            TwitterCrunchInfoControl chrunch = new TwitterCrunchInfoControl(searchWord);
+            tcCrunches.Items.Add(new TabItem() { Header = "#"+searchWord, Content = chrunch });
+            if (tcCrunches.Items.Count > 0) (tcCrunches.Items[0] as TabItem).IsSelected = true;
+            UpdateStatusBarInfo();
         }
     }
 }

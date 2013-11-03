@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\App.xaml
-7-2000723360
+8-1803544880
 
-121334688023
-22-1833458699
-Themes\Metro\Light\Metro.MSControls.Toolkit.Implicit.xaml;Themes\TwitterCrunch.ControlStyles.xaml;MainWindow.xaml;Themes\Metro\Light\Metro.MSControls.Core.Implicit.xaml;Themes\Metro\Light\Styles.Shared.xaml;Themes\Metro\Light\Styles.WPF.xaml;Themes\Metro\Light\Theme.Colors.xaml;
+15-1752479879
+23-1111187343
+CustomControls\TwitterCrunchInfoControl.xaml;Themes\Metro\Light\Metro.MSControls.Toolkit.Implicit.xaml;Themes\TwitterCrunch.ControlStyles.xaml;MainWindow.xaml;Themes\Metro\Light\Metro.MSControls.Core.Implicit.xaml;Themes\Metro\Light\Styles.Shared.xaml;Themes\Metro\Light\Styles.WPF.xaml;Themes\Metro\Light\Theme.Colors.xaml;
 
 False
 
