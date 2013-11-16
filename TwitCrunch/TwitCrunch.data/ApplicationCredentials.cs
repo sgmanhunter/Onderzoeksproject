@@ -74,22 +74,22 @@ namespace TwitCrunch.data
         public ArrayList ApiTest(string woord)
         {
             int optellen = 0;
+            
             ArrayList to_return = new ArrayList();
             var service = new TwitterService(_consumerKey, _consumerSecret);
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
 
-            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord, Count=100 });
+            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord, Count=200});
             
             IEnumerable<TwitterStatus> status = res.Statuses;
-           for (int i = 0 ; i < 15 ; i++){
+           for (int i = 0 ; i < 1 ; i++){
                
             foreach (var tweet in status)
             {
-                if (tweet.CreatedDate == DateTime.Today)
-                {
-                    to_return.Add(tweet.Text);
+
+                    to_return.Add(tweet.CreatedDate.ToString() + tweet.Text);
                     optellen++;
-                }
+                
             }
                }
             to_return.Add(optellen.ToString());
