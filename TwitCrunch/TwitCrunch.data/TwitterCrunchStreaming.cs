@@ -12,7 +12,7 @@ namespace TwitCrunch.data
 {
     class TwitterCrunchStreaming
     {
-        private void Stream()
+        public void Stream()
         {
 
 
@@ -26,16 +26,21 @@ namespace TwitCrunch.data
             StreamReader responseStream = new StreamReader(webResponse.GetResponseStream());
             while (true)
             {
+
                 var line = responseStream.ReadLine();
                 if (String.IsNullOrEmpty(line)) continue;
                 // dit moet nog verbeterd worden 
-                dynamic obj = serializer.Deserialize<Dictionary<string, object>>(line);
+                List<String> list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(responseStream.Read().ToString());
 
-                if (obj["user"] != null)
-                    Console.WriteLine(obj["user"]["screen_name"] + ": " + obj["text"]);
+
+
+                foreach (string item in list)
+                {
+                    Console.WriteLine(item);
+                }
+
             }
-
-
         }
     }
+
 }
