@@ -77,8 +77,8 @@ namespace TwitCrunch
 
         private void AddTwitterCrunchTabItem(string searchWord)
         {
-            TwitterCrunchInfoControl chrunch = new TwitterCrunchInfoControl(searchWord);
-            tcCrunches.Items.Add(new TabItem() { Header = "#"+searchWord, Content = chrunch });
+            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl(searchWord);
+            tcCrunches.Items.Add(new TabItem() { Header = "#" + searchWord, Content = crunch });
             if (tcCrunches.Items.Count > 0) (tcCrunches.Items[0] as TabItem).IsSelected = true;
             UpdateStatusBarInfo();
         }

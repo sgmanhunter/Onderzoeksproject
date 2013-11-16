@@ -19,13 +19,9 @@ D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe.confi
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.pdb
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Newtonsoft.Json.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\System.Windows.Interactivity.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TweetSharp.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.data.dll
-D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\WPFToolkit.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\WPFVisifire.Charts.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\WPFVisifire.Gauges.dll
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Hammock.ClientProfile.dll

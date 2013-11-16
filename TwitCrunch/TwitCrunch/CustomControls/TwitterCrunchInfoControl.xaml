@@ -18,18 +18,5 @@
         </ResourceDictionary>
     </UserControl.Resources>
     
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="137*"/>
-            <ColumnDefinition Width="663*"/>
-        </Grid.ColumnDefinitions>
 
-        <Controls:Accordion>
-            <Controls:AccordionItem Header="Item Numero uno" Content="Testo" />
-            <Controls:AccordionItem Header="Item Numero dos" Content="Testo"/>
-            <Controls:AccordionItem Header="Item Numero thres" Content="Testo"/>
-        </Controls:Accordion>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75"/>
-
-    </Grid>
 </UserControl>
