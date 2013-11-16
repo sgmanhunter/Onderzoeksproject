@@ -23,10 +23,10 @@
             <ColumnDefinition Width="137*"/>
             <ColumnDefinition Width="663*"/>
         </Grid.ColumnDefinitions>
-        
-        <Controls:Accordion Name="accTweets">
+        <ScrollViewer>
+            <Controls:Accordion Name="accTweets">
         </Controls:Accordion>
-
+    </ScrollViewer>
     </Grid>
-
+    
 </UserControl>

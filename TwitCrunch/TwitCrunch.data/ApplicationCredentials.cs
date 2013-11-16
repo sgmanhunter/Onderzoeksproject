@@ -79,7 +79,7 @@ namespace TwitCrunch.data
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
 
 
-            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord });
+            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord, Count=100 });
             IEnumerable<TwitterStatus> status = res.Statuses;
 
             foreach (var tweet in status)
