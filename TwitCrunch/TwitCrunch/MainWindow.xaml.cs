@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -77,7 +78,15 @@ namespace TwitCrunch
 
         private void AddTwitterCrunchTabItem(string searchWord)
         {
-            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl(searchWord);
+            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl();
+            ArrayList a = _appCred.ApiTest();
+
+            foreach (var i in a)
+            {
+                string element = (string)i;
+                crunch.addElementToAccordion(element);
+            }
+
             tcCrunches.Items.Add(new TabItem() { Header = "#" + searchWord, Content = crunch });
             if (tcCrunches.Items.Count > 0) (tcCrunches.Items[0] as TabItem).IsSelected = true;
             UpdateStatusBarInfo();

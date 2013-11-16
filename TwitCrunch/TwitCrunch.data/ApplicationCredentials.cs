@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -68,10 +69,23 @@ namespace TwitCrunch.data
                 return _accessTokenSecret;
             }
         }
- 
-
         private ApplicationCredentials()
         {}
+        public ArrayList ApiTest()
+        {
+            ArrayList to_return = new ArrayList();
+            var service = new TwitterService(_consumerKey, _consumerSecret);
+            service.AuthenticateWith(_accessToken, _accessTokenSecret);
+
+            IEnumerable<TwitterStatus> tweets = service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions());
+            
+            foreach (var tweet in tweets)
+            {
+                to_return.Add(tweet.Text);
+            }
+
+            return to_return;
+        }
 
     }
 }

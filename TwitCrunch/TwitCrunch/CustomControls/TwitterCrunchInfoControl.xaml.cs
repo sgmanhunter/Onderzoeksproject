@@ -27,12 +27,10 @@ namespace TwitCrunch.CustomControls
 
 
 
-        public TwitterCrunchInfoControl(string searchWord)
+        public TwitterCrunchInfoControl()
         {
             InitializeComponent();
             InitializeThis();
-            _searchKeyword = searchWord;
-            addElementToAccordion(_searchKeyword);
         }
 
         private void InitializeThis()
@@ -57,7 +55,7 @@ namespace TwitCrunch.CustomControls
             this.AddChild(grid);
         }
 
-        private void addElementToAccordion(string element)
+        public void addElementToAccordion(string element)
         {
             AccordionItem ai = new AccordionItem();
             ai.Header = element;
