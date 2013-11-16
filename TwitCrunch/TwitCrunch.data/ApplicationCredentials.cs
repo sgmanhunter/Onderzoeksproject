@@ -71,15 +71,17 @@ namespace TwitCrunch.data
         }
         private ApplicationCredentials()
         {}
-        public ArrayList ApiTest()
+        public ArrayList ApiTest(string tag)
         {
             ArrayList to_return = new ArrayList();
             var service = new TwitterService(_consumerKey, _consumerSecret);
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
 
-            IEnumerable<TwitterStatus> tweets = service.ListTweetsOnHomeTimeline(new ListTweetsOnHomeTimelineOptions());
-            
-            foreach (var tweet in tweets)
+
+            TwitterSearchResult res = service.Search(new SearchOptions { Q = tag });
+            IEnumerable<TwitterStatus> status = res.Statuses;
+
+            foreach (var tweet in status)
             {
                 to_return.Add(tweet.Text);
             }

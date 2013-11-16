@@ -79,7 +79,7 @@ namespace TwitCrunch
         private void AddTwitterCrunchTabItem(string searchWord)
         {
             TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl();
-            ArrayList a = _appCred.ApiTest();
+            ArrayList a = _appCred.ApiTest(searchWord);
 
             foreach (var i in a)
             {

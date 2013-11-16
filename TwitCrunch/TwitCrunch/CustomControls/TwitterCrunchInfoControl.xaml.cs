@@ -61,7 +61,6 @@ namespace TwitCrunch.CustomControls
             ai.Header = element;
             ai.Content = element;
             accordion.Items.Add(ai);
-             
         }
     }
 }
