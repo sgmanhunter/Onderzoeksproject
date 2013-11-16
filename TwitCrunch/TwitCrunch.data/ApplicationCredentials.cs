@@ -73,6 +73,7 @@ namespace TwitCrunch.data
         {}
         public ArrayList ApiTest(string tag)
         {
+            int optellen = 0;
             ArrayList to_return = new ArrayList();
             var service = new TwitterService(_consumerKey, _consumerSecret);
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
@@ -84,8 +85,9 @@ namespace TwitCrunch.data
             foreach (var tweet in status)
             {
                 to_return.Add(tweet.Text);
+                optellen++;
             }
-
+            to_return.Add(optellen.ToString());
             return to_return;
         }
 

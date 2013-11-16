@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\
 TwitCrunch
 none
 false
 DEBUG;TRACE
-D:\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\App.xaml
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\App.xaml
 8-1803544880
 
-15164260055
-23-861395670
+151045201046
+231613019679
 CustomControls\TwitterCrunchInfoControl.xaml;Themes\Metro\Light\Metro.MSControls.Toolkit.Implicit.xaml;Themes\TwitterCrunch.ControlStyles.xaml;MainWindow.xaml;Themes\Metro\Light\Metro.MSControls.Core.Implicit.xaml;Themes\Metro\Light\Styles.Shared.xaml;Themes\Metro\Light\Styles.WPF.xaml;Themes\Metro\Light\Theme.Colors.xaml;
 
-False
+True
 
