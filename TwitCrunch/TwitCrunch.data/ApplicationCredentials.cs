@@ -78,15 +78,20 @@ namespace TwitCrunch.data
             var service = new TwitterService(_consumerKey, _consumerSecret);
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
 
-
             TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord, Count=100 });
+            
             IEnumerable<TwitterStatus> status = res.Statuses;
-
+           for (int i = 0 ; i < 15 ; i++){
+               
             foreach (var tweet in status)
             {
-                to_return.Add(tweet.Text);
-                optellen++;
+                if (tweet.CreatedDate == DateTime.Today)
+                {
+                    to_return.Add(tweet.Text);
+                    optellen++;
+                }
             }
+               }
             to_return.Add(optellen.ToString());
             return to_return;
         }
