@@ -18,5 +18,15 @@
         </ResourceDictionary>
     </UserControl.Resources>
     
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="663*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Controls:Accordion Name="accTweets">
+        </Controls:Accordion>
+
+    </Grid>
 
 </UserControl>
