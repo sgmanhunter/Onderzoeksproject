@@ -71,7 +71,7 @@ namespace TwitCrunch.data
         }
         private ApplicationCredentials()
         {}
-        public ArrayList ApiTest(string tag)
+        public ArrayList ApiTest(string woord)
         {
             int optellen = 0;
             ArrayList to_return = new ArrayList();
@@ -79,7 +79,7 @@ namespace TwitCrunch.data
             service.AuthenticateWith(_accessToken, _accessTokenSecret);
 
 
-            TwitterSearchResult res = service.Search(new SearchOptions { Q = tag });
+            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord });
             IEnumerable<TwitterStatus> status = res.Statuses;
 
             foreach (var tweet in status)
