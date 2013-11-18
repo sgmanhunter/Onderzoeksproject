@@ -1,0 +1,7 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\bin\Debug\Tools.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\bin\Debug\Tools.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\bin\Debug\TweetinCore.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\bin\Debug\TweetinCore.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\obj\Debug\Tools.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Tools\obj\Debug\Tools.pdb

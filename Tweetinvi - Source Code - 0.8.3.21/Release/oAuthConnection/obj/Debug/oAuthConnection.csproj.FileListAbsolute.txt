@@ -1,0 +1,7 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\bin\Debug\oAuthConnection.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\bin\Debug\oAuthConnection.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\bin\Debug\TweetinCore.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\bin\Debug\TweetinCore.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\obj\Debug\oAuthConnection.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\obj\Debug\oAuthConnection.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\oAuthConnection\obj\Debug\oAuthConnection.pdb

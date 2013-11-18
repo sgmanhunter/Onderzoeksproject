@@ -1,0 +1,22 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\Streaminvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\Streaminvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\TweetinCore.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\Tweetinvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\TweetinCore.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\bin\Debug\Tweetinvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\obj\Debug\Streaminvi.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\obj\Debug\Streaminvi.Properties.Resources.resources
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\obj\Debug\Streaminvi.csproj.GenerateResource.Cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\obj\Debug\Streaminvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Streaminvi\obj\Debug\Streaminvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\Streaminvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\Streaminvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\TweetinCore.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\Tweetinvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\TweetinCore.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\Tweetinvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\obj\Debug\Streaminvi.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\obj\Debug\Streaminvi.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\obj\Debug\Streaminvi.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\obj\Debug\Streaminvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\obj\Debug\Streaminvi.pdb

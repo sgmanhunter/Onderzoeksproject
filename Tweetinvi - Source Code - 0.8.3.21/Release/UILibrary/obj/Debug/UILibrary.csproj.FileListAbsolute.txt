@@ -1,0 +1,12 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\bin\Debug\UILibrary.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\bin\Debug\UILibrary.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\View\ValidateApplicationCaptchaWindow.baml
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\View\ValidateApplicationCaptchaWindow.g.cs
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary_MarkupCompile.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.g.resources
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.Properties.Resources.resources
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.csproj.GenerateResource.Cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.pdb

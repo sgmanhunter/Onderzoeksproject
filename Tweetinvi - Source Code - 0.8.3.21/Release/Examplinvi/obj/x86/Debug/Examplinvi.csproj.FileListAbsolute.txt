@@ -1,0 +1,26 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Examplinvi.exe.config
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Examplinvi.exe
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Examplinvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\oAuthConnection.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\SearchEngine.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Streaminvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Tools.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\TweetinCore.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Tweetinvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\TwitterToken.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\UILibrary.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\oAuthConnection.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\SearchEngine.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Streaminvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Tools.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\TweetinCore.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\Tweetinvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\TwitterToken.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\bin\Debug\UILibrary.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\obj\x86\Debug\Examplinvi.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\obj\x86\Debug\Examplinvi.exe
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\Examplinvi\obj\x86\Debug\Examplinvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\bin\Debug\Examplinvi.exe.config
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\obj\x86\Debug\Examplinvi.exe
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\obj\x86\Debug\Examplinvi.pdb

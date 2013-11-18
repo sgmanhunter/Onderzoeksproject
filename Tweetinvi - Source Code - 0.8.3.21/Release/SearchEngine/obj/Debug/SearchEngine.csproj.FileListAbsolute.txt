@@ -1,0 +1,11 @@
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\SearchEngine.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\SearchEngine.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\TweetinCore.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\Tweetinvi.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\TweetinCore.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\bin\Debug\Tweetinvi.pdb
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.csprojResolveAssemblyReference.cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\Tweetinvi.Properties.Resources.resources
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.csproj.GenerateResource.Cache
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.dll
+C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.pdb
