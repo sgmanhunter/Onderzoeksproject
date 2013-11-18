@@ -36,6 +36,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\TwitCrunch\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="oAuthConnection">
+      <HintPath>..\..\Tweetinvi - Source Code - 0.8.3.21\Release\oAuthConnection\obj\Debug\oAuthConnection.dll</HintPath>
+    </Reference>
     <Reference Include="Streaminvi">
       <HintPath>..\..\Tweetinvi - Source Code - 0.8.3.21\Release\Streaminvi\bin\Debug\Streaminvi.dll</HintPath>
     </Reference>
@@ -54,6 +57,9 @@
     </Reference>
     <Reference Include="TweetSharp">
       <HintPath>..\TwitCrunch\lib\TweetSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="TwitterToken">
+      <HintPath>..\..\Tweetinvi - Source Code - 0.8.3.21\Release\TwitterToken\obj\Debug\TwitterToken.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
