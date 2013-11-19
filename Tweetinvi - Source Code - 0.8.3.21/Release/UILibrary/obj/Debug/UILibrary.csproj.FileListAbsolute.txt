@@ -10,3 +10,15 @@ C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\o
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.csproj.GenerateResource.Cache
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.dll
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\UILibrary\obj\Debug\UILibrary.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\bin\Debug\UILibrary.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\bin\Debug\UILibrary.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\View\ValidateApplicationCaptchaWindow.baml
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\View\ValidateApplicationCaptchaWindow.g.cs
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary_MarkupCompile.cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.g.resources
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\UILibrary\obj\Debug\UILibrary.pdb

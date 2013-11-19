@@ -9,3 +9,14 @@ C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngin
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.csproj.GenerateResource.Cache
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.dll
 C:\Users\timart\Documents\My Box Files\Development\Tweetinvi\Release\SearchEngine\obj\Debug\SearchEngine.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\SearchEngine.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\SearchEngine.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\TweetinCore.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\Tweetinvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\TweetinCore.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\bin\Debug\Tweetinvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\obj\Debug\SearchEngine.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\obj\Debug\Tweetinvi.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\obj\Debug\SearchEngine.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\obj\Debug\SearchEngine.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\SearchEngine\obj\Debug\SearchEngine.pdb

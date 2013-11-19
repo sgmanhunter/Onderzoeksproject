@@ -277,7 +277,7 @@ namespace Examplinvi
             {
                 Console.WriteLine("You have missed {0} tweets because you were retrieving more than 1% of tweets", args.Value);
             };
-
+            
             TwitterContext context = new TwitterContext();
             if (!context.TryInvokeAction(() => stream.StartStream(token, tweet => Console.WriteLine(tweet))))
             {
