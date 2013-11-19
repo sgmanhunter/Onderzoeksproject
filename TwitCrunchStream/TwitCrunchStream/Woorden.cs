@@ -8,6 +8,7 @@ namespace TwitCrunchStream
 {
     class Woorden
     {
+
         private String zoekwoord;
 
         public String Zoekwoord
