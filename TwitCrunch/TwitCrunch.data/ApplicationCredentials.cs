@@ -78,10 +78,10 @@ namespace TwitCrunch.data
         {}
 
         //testen 
-        IToken token = new Token(ApplicationCredentials.Singleton.AccessToken,
-            ApplicationCredentials.Singleton.AccessTokenSecret,
-            ApplicationCredentials.Singleton.ConsumerKey,
-            ApplicationCredentials.Singleton.ConsumerSecret);
+        IToken token = new Token(_user._accessToken, 
+            _user._accessTokenSecret, 
+            _user._consumerKey, 
+            _user._consumerSecret);
 
         private static readonly List<ITweet> _streamList = new List<ITweet>();
         private static void ProcessTweet(ITweet tweet)
