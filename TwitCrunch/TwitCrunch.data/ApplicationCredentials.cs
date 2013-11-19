@@ -5,7 +5,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TweetSharp;
+using Streaminvi;
+using TweetinCore.Interfaces;
+using TweetinCore.Interfaces.TwitterToken;
+using TweetinCore.Interfaces.StreamInvi;
+using TwitterToken;
+using Tweetinvi;
 
 
 namespace TwitCrunch.data
@@ -71,30 +76,42 @@ namespace TwitCrunch.data
         }
         private ApplicationCredentials()
         {}
-        public ArrayList ApiTest(string woord)
+
+        //testen 
+        IToken token = new Token(ApplicationCredentials.Singleton.AccessToken,
+            ApplicationCredentials.Singleton.AccessTokenSecret,
+            ApplicationCredentials.Singleton.ConsumerKey,
+            ApplicationCredentials.Singleton.ConsumerSecret);
+
+        private static readonly List<ITweet> _streamList = new List<ITweet>();
+        private static void ProcessTweet(ITweet tweet)
         {
-            int optellen = 0;
-            
-            ArrayList to_return = new ArrayList();
-            var service = new TwitterService(_consumerKey, _consumerSecret);
-            service.AuthenticateWith(_accessToken, _accessTokenSecret);
-
-            TwitterSearchResult res = service.Search(new SearchOptions { Q = "#"+woord, Count=200});
-            
-            IEnumerable<TwitterStatus> status = res.Statuses;
-           for (int i = 0 ; i < 1 ; i++){
-               
-            foreach (var tweet in status)
+            if (tweet == null)
             {
-
-                    to_return.Add(tweet.CreatedDate.ToString() + tweet.Text);
-                    optellen++;
-                
+                return;
             }
-               }
-            to_return.Add(optellen.ToString());
-            return to_return;
-        }
 
+            if (_streamList.Count % 125 != 124)
+            {
+                Console.WriteLine("{0} : \"{1}\"", tweet.Creator.Name, tweet.Text);
+                _streamList.Add(tweet);
+            }
+            else
+            {
+                Console.WriteLine("Processing data");
+                _streamList.Clear();
+            }
+        }
+        public void Stream()
+        {
+
+            SimpleStream twitterStream = new SimpleStream("https://stream.twitter.com/1.1/statuses/sample.json");
+
+            twitterStream.StartStream(token, x => ProcessTweet(x));
+
+
+
+
+        }
     }
 }

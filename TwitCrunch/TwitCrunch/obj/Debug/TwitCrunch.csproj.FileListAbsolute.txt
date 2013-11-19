@@ -88,3 +88,13 @@ C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.g.resources
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.Properties.Resources.resources
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TweetinCore.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Streaminvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitterToken.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Tweetinvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\oAuthConnection.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TweetinCore.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Streaminvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitterToken.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Tweetinvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\oAuthConnection.pdb

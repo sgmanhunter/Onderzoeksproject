@@ -14,3 +14,13 @@ C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.dll
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\obj\Debug\TwitCrunch.data.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\oAuthConnection.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Streaminvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TweetinCore.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Tweetinvi.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TwitterToken.dll
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\oAuthConnection.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Streaminvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TweetinCore.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\Tweetinvi.pdb
+C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch.data\bin\Debug\TwitterToken.pdb
