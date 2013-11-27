@@ -29,24 +29,8 @@ namespace TwitCrunchStream
 
         static void Main()
         {
-
-            IToken token = new Token(
-    ConfigurationManager.AppSettings["token_AccessToken"],
-    ConfigurationManager.AppSettings["token_AccessTokenSecret"],
-    ConfigurationManager.AppSettings["token_ConsumerKey"],
-    ConfigurationManager.AppSettings["token_ConsumerSecret"]);
-
-            TokenSingleton.Token = token;
-
-            Woorden woord = new Woorden();
-            woord.Zoekwoord = "pang";
-            StreamManagement stream = new StreamManagement(woord.Zoekwoord);
-           
-           
-           
-            
-            Console.WriteLine("test");
-            
+            StreamManagement sm = new StreamManagement();
+            sm.Init("pang");
         }
 
         

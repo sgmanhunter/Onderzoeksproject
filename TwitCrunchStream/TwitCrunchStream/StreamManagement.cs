@@ -20,39 +20,34 @@ namespace TwitCrunchStream
 {
     class StreamManagement
     {
-
-      
-        public StreamManagement(String woorden)
+        public StreamManagement()
         {
-         
-            StreamFilterBasicTrackExample(TokenSingleton.Token,woorden);
+            createToken();
         }
 
-        private static int _processedFilteredTweetCount;
-        private static bool ProcessFilteredTweet(ITweet tweet, List<string> list)
+        public void Init(String woord)
         {
+            StreamFilterBasicTrackExample(TokenSingleton.Token, woord);
+        }
 
-            Console.WriteLine(tweet.Text);
-            Console.WriteLine("Matched {0} tracks", list.Count);
-            for (int i = 0; i < list.Count; ++i)
-            {
-                Console.WriteLine("\t- {0}", list[i]);
-            }
+        private void createToken()
+        {
+            IToken token = new Token(
+            ConfigurationManager.AppSettings["token_AccessToken"],
+            ConfigurationManager.AppSettings["token_AccessTokenSecret"],
+            ConfigurationManager.AppSettings["token_ConsumerKey"],
+            ConfigurationManager.AppSettings["token_ConsumerSecret"]);
 
-            ++_processedFilteredTweetCount;
-
-            // Stop the stream after 500 tweets
-            return _processedFilteredTweetCount < 500;
+            TokenSingleton.Token = token;
         }
 
         // Track Keywords
-        private static void StreamFilterBasicTrackExample(IToken token, String zoekwoord)
+        private void StreamFilterBasicTrackExample(IToken token, String zoekwoord)
         {
             IFilteredStream stream = new FilteredStream();
 
             stream.StreamStarted += (sender, args) => Console.WriteLine("Stream has started!");
             stream.AddTrack("#" + zoekwoord);
-
 
             stream.LimitReached += (sender, args) =>
             {
@@ -60,10 +55,17 @@ namespace TwitCrunchStream
             };
 
             TwitterContext context = new TwitterContext();
-            if (!context.TryInvokeAction(() => stream.StartStream(token, tweet => Console.WriteLine(tweet))))
+            if (!context.TryInvokeAction(() => stream.StartStream(token, tweet => catchTweets(tweet))))
             {
                 Console.WriteLine("An Exception occured : '{0}'", context.LastActionTwitterException.TwitterWebExceptionErrorDescription);
             }
+        }
+
+        private void catchTweets(ITweet tweet)
+        {
+            Console.WriteLine(tweet);
+            Tweet nieuweTweet = new Tweet(tweet);
+            nieuweTweet.WriteToDatabase();
         }
     }
 }
