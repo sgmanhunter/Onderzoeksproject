@@ -19,8 +19,6 @@ C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitC
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.exe
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitCrunchStream.exe.config
-C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.exe
-C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitCrunchStream.exe
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitCrunchStream.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\oAuthConnection.dll
@@ -37,4 +35,5 @@ C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStr
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitterToken.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.csproj.GenerateResource.Cache
-C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.exe
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.pdb
