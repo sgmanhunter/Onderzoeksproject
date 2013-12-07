@@ -10,14 +10,14 @@ namespace TwitCrunchStream
     class Tweet
     {
         private string text;
-        private string id;
+        private int id;
         private string creatorUserName;
         private DateTime createdAt;
         private string tagString;
         public Tweet(ITweet tweet)
         {
             this.text = tweet.Text;
-            this.id = tweet.IdStr;
+            this.id = int.Parse(tweet.IdStr);
             this.createdAt = tweet.CreatedAt;
             this.creatorUserName = tweet.Creator.ScreenName;
             this.tagString = convertListToString(tweet.Hashtags);
@@ -45,6 +45,8 @@ namespace TwitCrunchStream
             Console.WriteLine("createdAt: " + this.createdAt);
             Console.WriteLine("ID: " + this.id);
             Console.WriteLine("Hashtags: " + this.tagString);
+
+
         }
 
 

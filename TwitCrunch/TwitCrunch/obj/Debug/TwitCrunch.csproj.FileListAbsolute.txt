@@ -98,3 +98,5 @@ C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitterToken.pdb
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\Tweetinvi.pdb
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\oAuthConnection.pdb
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe.config
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.exe

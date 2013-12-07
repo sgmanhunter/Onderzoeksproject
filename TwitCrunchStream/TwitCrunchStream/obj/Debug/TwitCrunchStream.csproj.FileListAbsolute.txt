@@ -37,3 +37,4 @@ C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStr
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitterToken.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.csprojResolveAssemblyReference.cache
