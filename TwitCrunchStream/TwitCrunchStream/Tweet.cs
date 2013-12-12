@@ -63,7 +63,7 @@ namespace TwitCrunchStream
             }
             catch (Exception e)
             {
-                
+                throw new Exception("Mistake in the database ");
             }
         }
 
