@@ -20,22 +20,17 @@ namespace TwitCrunchStream
 {
     class StreamManagement
     {
+        private string[] woorden;
+
         public StreamManagement()
         {
             createToken();
         }
-        private string woord;
 
-        public string Woord
+        public void Init(string[] woorden)
         {
-            get { return woord; }
-            set { woord = value; }
-        }
-
-        public void Init(String woord)
-        {
-            StreamFilterBasicTrackExample(TokenSingleton.Token, woord);
-            this.woord = woord;
+            this.woorden = woorden;
+            StreamFilterBasicTrackExample(TokenSingleton.Token, woorden);
         }
 
         private void createToken()
@@ -50,14 +45,18 @@ namespace TwitCrunchStream
         }
 
         // Track Keywords
-        private void StreamFilterBasicTrackExample(IToken token, String zoekwoord)
+        private void StreamFilterBasicTrackExample(IToken token, string[] zoekwoorden)
         {
             try
             {
                 IFilteredStream stream = new FilteredStream();
 
                 stream.StreamStarted += (sender, args) => Console.WriteLine("Stream has started!");
-                stream.AddTrack("#" + zoekwoord);
+                foreach (string zoekwoord in zoekwoorden)
+                {
+                    if (zoekwoord != null)
+                    stream.AddTrack("#" + zoekwoord);
+                }
 
                 stream.LimitReached += (sender, args) =>
                 {
@@ -72,7 +71,7 @@ namespace TwitCrunchStream
             }
             catch (TimeoutException)
             {
-                StreamFilterBasicTrackExample(TokenSingleton.Token, woord);
+                StreamFilterBasicTrackExample(TokenSingleton.Token, woorden);
                 throw new TimeoutException("Connectie is verbroken en wordt hervat");
                 
             }

@@ -15,6 +15,7 @@ using Tweetinvi;
 using Tweetinvi.Model;
 using TwitterToken;
 using System.Configuration;
+using System.Collections;
 
 
 namespace TwitCrunchStream
@@ -30,7 +31,11 @@ namespace TwitCrunchStream
         static void Main()
         {
             StreamManagement sm = new StreamManagement();
-            sm.Init("pang");
+
+            string[] zoekwoorden = new string[3];
+            zoekwoorden[0] = "christmas";
+
+            sm.Init(zoekwoorden);
         }
 
         
