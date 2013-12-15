@@ -6,7 +6,7 @@
         Width="800"
         Title="#TwitterCrunch"
         Style="{DynamicResource TwitterChrunchWindow}" >
-    
+
     <Window.Resources>
         <!-- Dictionaries-->
         <ResourceDictionary>
@@ -14,26 +14,30 @@
                 <ResourceDictionary Source="Themes/Metro/Light/Metro.MSControls.Core.Implicit.xaml" />
                 <ResourceDictionary Source="Themes/TwitterCrunch.ControlStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>    
-    </Window.Resources>    
-    
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="83"/>
-            <ColumnDefinition Width="558"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="76"/>
+            <ColumnDefinition Width="565"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="461*"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock Text="#" Style="{DynamicResource HeaderTextBlockStyle}" FontSize="72" TextAlignment="Right" />
-        <TextBox x:Name="txtSearchTerm" Grid.Column="1" HorizontalAlignment="Left" Height="52" Margin="0,23,0,0" Width="427" FontSize="30" Style="{StaticResource searchTextBoxStyle}" />
-        <Button x:Name="btnSearch" Content="Crunch" Grid.Column="1" Margin="449,23,1,0"  Width="108" Height="52" Click="btnSearch_Click"/>
+        <TextBox x:Name="txtSearchTerm" Grid.Column="1" HorizontalAlignment="Left" Margin="0,26,0,75" Width="427" FontSize="30" Style="{StaticResource searchTextBoxStyle}" />
+        <Button x:Name="btnSearch" Content="Crunch" Grid.Column="1" Margin="449,26,1,10" Click="btnSearch_Click"/>
 
         <TabControl x:Name="tcCrunches" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource TwitterCrunch.TabControl}" Margin="0,20,0,0">
         </TabControl>
+        <Label Grid.Column="1" HorizontalAlignment="Left" Margin="0,80,0,40" Width="150" Content="Starting from:" />
+        <DatePicker x:Name="dateFrom" Grid.Column="1" HorizontalAlignment="Left" Margin="0,110,0,0" Width="150"/>
+        <Label Grid.Column="1" HorizontalAlignment="Left" Margin="200,80,0,40" Width="150" Content="Until:" />
+        <DatePicker x:Name="dateUntil" Grid.Column="1" HorizontalAlignment="Left" Margin="200,110,0,0" Width="150"/>
 
     </Grid>
 </Window>

@@ -17,7 +17,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TwitCrunch.CustomControls;
-using TwitCrunch.data;
 using TwitCrunch.Tools;
 
 
@@ -29,31 +28,18 @@ namespace TwitCrunch
     ///
     public partial class MainWindow : Window
     {
-       
-
-        private string _consumerKey = "c7g4rHrnerkTPBjdba0Kw";
-        private string _consumerSecret = "1IO7eiGYSLaKKpErzfbgRYAEF5KUe7LZrtMz2FAgSFI";
-        private string _accessToken = "2159075078-cRSaEeEgFWThXBx49tykpGyILtkxlhefdFcisk8";
-        private string _accessTokenSecret = "r9XobK34W2OL5UUVdyDLq5E34t8Xe0AVEljRWdju6m491";
-
-        private TextBlock _sbStatus;
-
-        private ApplicationCredentials _appCred = ApplicationCredentials.Singleton;
+        private TextBlock sbStatus;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Title += " "+Diagnosis.GetVersionNumber();
+            Title += " " + Diagnosis.GetVersionNumber();
 
-            _appCred.ConsumerKey = _consumerKey;
-            _appCred.ConsumerSecret = _consumerSecret;
-            _appCred.AccessToken = _accessToken;
-            _appCred.AccessTokenSecret = _accessTokenSecret;
-
-            // To get the statusbar that is coded into the style template (TwitterCrunchWindow) we must first load it before we initialise this window
+            // To get the statusbar that is coded into the style template (TwitterCrunchWindow) 
+            // we must first load it before we initialise this window
             this.ApplyTemplate();
-            _sbStatus = this.GetTemplateChild("tbStatus") as TextBlock;
+            sbStatus = this.GetTemplateChild("tbStatus") as TextBlock;
 
             UpdateStatusBarInfo();
         }
@@ -61,35 +47,59 @@ namespace TwitCrunch
 
         private void UpdateStatusBarInfo()
         {
-            if (_sbStatus != null)
+            if (sbStatus != null)
             {
                 string memory = Diagnosis.GetMemoryUsage();
                 string threadCount = Diagnosis.GetThreadCount();
-                _sbStatus.Text = string.Format("{0} Memory used \t {1} Threads", memory, threadCount);
+                sbStatus.Text = string.Format("{0} Memory used \t {1} Threads", memory, threadCount);
             }
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            // ToDo: validation
             string searchWord = txtSearchTerm.Text;
-            txtSearchTerm.Text = String.Empty;
-            AddTwitterCrunchTabItem(searchWord);
+            bool everythingOK = false;
+
+            if (searchWord != "")
+            {
+                if (dateFrom.SelectedDate != null && dateUntil.SelectedDate != null)
+                {
+                    if (dateUntil.SelectedDate <= DateTime.Now)
+                    {
+                        AddTwitterCrunchTabItem(searchWord);
+                        txtSearchTerm.Text = String.Empty;
+                        dateFrom.SelectedDate = null;
+                        dateUntil.SelectedDate = null;
+                        everythingOK = true;
+                    }
+                }
+            }
+
+            if (!everythingOK)
+            {
+                MessageBox.Show("Error: input is uncorrect");
+            }
+
         }
 
         private void AddTwitterCrunchTabItem(string searchWord)
         {
             TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl();
-            List<String> a = _appCred._streamList;
-            //ArrayList a = _appCred._st();
+            
+            TabItem currentItem = new TabItem() { Header = "#" + searchWord.ToUpper(), Content = crunch };
 
-            foreach (var i in a)
-            {
-                string element = (string)i;
-                crunch.addElementToAccordion(element);
-            }
+            //ToDo: query each tag, using tag-class
 
-            tcCrunches.Items.Add(new TabItem() { Header = "#" + searchWord, Content = crunch });
-            if (tcCrunches.Items.Count > 0) (tcCrunches.Items[0] as TabItem).IsSelected = true;
+            //ToDo: pass data to chart
+            currentItem.Content = new CustomControls.Chart();
+
+
+            tcCrunches.Items.Add(currentItem);
+            currentItem.IsSelected = true;
+
+           
+
             UpdateStatusBarInfo();
         }
     }
