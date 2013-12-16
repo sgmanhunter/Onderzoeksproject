@@ -38,3 +38,6 @@ C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStr
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.exe
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.pdb
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.csprojResolveAssemblyReference.cache
+D:\Github\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\bin\Debug\TwitCrunchStream.exe.config
+D:\Github\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.exe
+D:\Github\Onderzoeksproject\TwitCrunchStream\TwitCrunchStream\obj\Debug\TwitCrunchStream.pdb

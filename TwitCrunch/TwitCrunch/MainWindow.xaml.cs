@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -18,6 +19,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TwitCrunch.CustomControls;
 using TwitCrunch.Tools;
+using Visifire.Charts;
+
+using TwitCrunch.SQL;
 
 
 namespace TwitCrunch
@@ -73,6 +77,10 @@ namespace TwitCrunch
                         dateUntil.SelectedDate = null;
                         everythingOK = true;
                     }
+                    else
+                    {
+                        MessageBox.Show("Until date cannot be in the future","Input error",MessageBoxButton.OK,MessageBoxImage.Warning);
+                    }
                 }
             }
 
@@ -85,22 +93,19 @@ namespace TwitCrunch
 
         private void AddTwitterCrunchTabItem(string searchWord)
         {
-            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl();
-            
+            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl(searchWord);
+
             TabItem currentItem = new TabItem() { Header = "#" + searchWord.ToUpper(), Content = crunch };
 
-            //ToDo: query each tag, using tag-class
-
-            //ToDo: pass data to chart
-            currentItem.Content = new CustomControls.Chart();
-
+            //ToDo: query each tag, using tag-class     
 
             tcCrunches.Items.Add(currentItem);
             currentItem.IsSelected = true;
 
-           
 
             UpdateStatusBarInfo();
         }
+
+
     }
 }

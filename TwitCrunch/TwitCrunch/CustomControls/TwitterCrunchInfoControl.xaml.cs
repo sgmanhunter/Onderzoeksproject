@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TwitCrunch.SQL;
 
 namespace TwitCrunch.CustomControls
 {
@@ -20,17 +22,23 @@ namespace TwitCrunch.CustomControls
     /// </summary>
     public partial class TwitterCrunchInfoControl : UserControl
     {
-        public TwitterCrunchInfoControl()
+        public TwitterCrunchInfoControl(string keyword)
         {
             InitializeComponent();
+
+            InitCharts(keyword);
         }
 
-        public void addElementToAccordion(string element)
+        private void InitCharts(string keyword)
         {
-            AccordionItem ai = new AccordionItem();
-            ai.Header = element;
-            ai.Content = element;
-            accTweets.Items.Add(ai);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                TwitCrunchStatsContext stats = new TwitCrunchStatsContext(ConfigurationManager.ConnectionStrings["TwitCrunchDataBase"].ConnectionString);
+                DayStats daystats = new DayStats(stats.GetDayStatsFromKeyWord(keyword));
+                gStats.Children.Add(daystats);
+            }
+
         }
+
     }
 }
