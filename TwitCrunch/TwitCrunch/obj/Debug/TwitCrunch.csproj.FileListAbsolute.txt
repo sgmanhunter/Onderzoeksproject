@@ -98,8 +98,6 @@ C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debu
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.pdb
-C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\CustomControls\Chart.baml
-C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\CustomControls\Chart.g.cs
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe.config
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.exe
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\bin\Debug\TwitCrunch.pdb
@@ -146,3 +144,5 @@ D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.Propertie
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.csproj.GenerateResource.Cache
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.exe
 D:\Github\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\TwitCrunch.pdb
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\CustomControls\DayStats.baml
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\TwitCrunch\TwitCrunch\obj\Debug\CustomControls\DayStats.g.cs

@@ -25,19 +25,16 @@ namespace TwitCrunch.CustomControls
         public TwitterCrunchInfoControl(string keyword)
         {
             InitializeComponent();
-
             InitCharts(keyword);
         }
 
         private void InitCharts(string keyword)
         {
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                TwitCrunchStatsContext stats = new TwitCrunchStatsContext(ConfigurationManager.ConnectionStrings["TwitCrunchDataBase"].ConnectionString);
-                DayStats daystats = new DayStats(stats.GetDayStatsFromKeyWord(keyword));
-                gStats.Children.Add(daystats);
-            }
-
+            //deleted the check on emptiness of the keywoard, because it's being checked before
+            //see MainWindow
+            TwitCrunchStatsContext stats = new TwitCrunchStatsContext(ConfigurationManager.ConnectionStrings["TwitCrunchDataBase"].ConnectionString);
+            DayStats daystats = new DayStats(stats.GetDayStatsFromKeyWord(keyword));
+            gStats.Children.Add(daystats);
         }
 
     }

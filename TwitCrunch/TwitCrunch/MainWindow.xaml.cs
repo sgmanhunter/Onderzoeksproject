@@ -59,22 +59,28 @@ namespace TwitCrunch
             }
         }
 
+        private void ResetInput()
+        {
+            txtSearchTerm.Text = String.Empty;
+            dateFrom.SelectedDate = null;
+            dateUntil.SelectedDate = null;
+        }
+
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             // ToDo: validation
             string searchWord = txtSearchTerm.Text;
             bool everythingOK = false;
 
-            if (searchWord != "")
+            if (!string.IsNullOrEmpty(searchWord))
             {
                 if (dateFrom.SelectedDate != null && dateUntil.SelectedDate != null)
                 {
-                    if (dateUntil.SelectedDate <= DateTime.Now)
+                    //Only show until previous day, because today is still being counted
+                    if (dateUntil.SelectedDate < DateTime.Now)
                     {
                         AddTwitterCrunchTabItem(searchWord);
-                        txtSearchTerm.Text = String.Empty;
-                        dateFrom.SelectedDate = null;
-                        dateUntil.SelectedDate = null;
+                        ResetInput();
                         everythingOK = true;
                     }
                     else
@@ -86,7 +92,7 @@ namespace TwitCrunch
 
             if (!everythingOK)
             {
-                MessageBox.Show("Error: input is uncorrect");
+                MessageBox.Show("Input is uncorrect", "Input error");
             }
 
         }
@@ -98,10 +104,10 @@ namespace TwitCrunch
             TabItem currentItem = new TabItem() { Header = "#" + searchWord.ToUpper(), Content = crunch };
 
             //ToDo: query each tag, using tag-class     
-
             tcCrunches.Items.Add(currentItem);
-            currentItem.IsSelected = true;
 
+            //select current tab
+            currentItem.IsSelected = true;
 
             UpdateStatusBarInfo();
         }
