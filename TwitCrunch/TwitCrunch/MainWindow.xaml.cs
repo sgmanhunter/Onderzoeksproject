@@ -33,6 +33,8 @@ namespace TwitCrunch
     public partial class MainWindow : Window
     {
         private TextBlock sbStatus;
+        private DateTime? from;
+        private DateTime? until;
 
         public MainWindow()
         {
@@ -77,15 +79,17 @@ namespace TwitCrunch
                 if (dateFrom.SelectedDate != null && dateUntil.SelectedDate != null)
                 {
                     //Only show until previous day, because today is still being counted
-                    if (dateUntil.SelectedDate < DateTime.Now)
+                    if (dateUntil.SelectedDate.Value.Date < DateTime.Now.Date)
                     {
+                        from = dateFrom.SelectedDate;
+                        until = dateUntil.SelectedDate;
                         AddTwitterCrunchTabItem(searchWord);
                         ResetInput();
                         everythingOK = true;
                     }
                     else
                     {
-                        MessageBox.Show("Until date cannot be in the future","Input error",MessageBoxButton.OK,MessageBoxImage.Warning);
+                        MessageBox.Show("Date interval should end earlier than today, data is still being collected","Input error",MessageBoxButton.OK,MessageBoxImage.Warning);
                     }
                 }
             }
@@ -99,11 +103,10 @@ namespace TwitCrunch
 
         private void AddTwitterCrunchTabItem(string searchWord)
         {
-            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl(searchWord);
+            TwitterCrunchInfoControl crunch = new TwitterCrunchInfoControl(searchWord, from, until);
 
             TabItem currentItem = new TabItem() { Header = "#" + searchWord.ToUpper(), Content = crunch };
-
-            //ToDo: query each tag, using tag-class     
+  
             tcCrunches.Items.Add(currentItem);
 
             //select current tab

@@ -21,16 +21,19 @@ namespace TwitCrunch.CustomControls
     /// </summary>
     public partial class DayStats : UserControl
     {
+        private DateTime? from;
+        private DateTime? until;
 
         public DayStats()
         {
             InitializeComponent();
         }
 
-        public DayStats(Dictionary<DateTime?, int?> datapoints = null)
+        public DayStats(DateTime? from, DateTime? until, Dictionary<DateTime?, int?> datapoints = null)
         {
+            this.from = from;
+            this.until = until;
             InitializeComponent();
-
             CreateStats(datapoints);
         }
 
@@ -45,14 +48,26 @@ namespace TwitCrunch.CustomControls
 
                 foreach (KeyValuePair<DateTime?, int?> point in datapoints)
                 {
-                    DataPoint dataPoint = new DataPoint()
-                    {
-                        // Setting XValue as DateTime will create DateTime Axis
+                    //ToDo: datapoint mag enkel toegevoegd worden als die tussen het bereik van de gekozen datums ligt
+                    DateTime fromToCompare = (DateTime)this.from;
+                    DateTime untilToCompare = (DateTime)this.until;
+                    DateTime currentDateToCompare = (DateTime)point.Key;
 
-                        XValue = point.Key,
-                        YValue = (double)point.Value
-                    };
-                    dataSeries.DataPoints.Add(dataPoint);
+                    /*
+                     * < 0 earlier; datum moet  later of gelijk aan from zijn
+                     * > 0 later
+                    */
+                    if ((DateTime.Compare(currentDateToCompare, fromToCompare) >= 0) && (DateTime.Compare(currentDateToCompare, untilToCompare) <= 0))
+                    {
+                        DataPoint dataPoint = new DataPoint()
+                        {
+                            // Setting XValue as DateTime will create DateTime Axis
+
+                            XValue = point.Key,
+                            YValue = (double)point.Value
+                        };
+                        dataSeries.DataPoints.Add(dataPoint);
+                    }
                 }
                 dataSeries.RenderAs = RenderAs.Spline;
                 dataSeries.XValueType = ChartValueTypes.Date;

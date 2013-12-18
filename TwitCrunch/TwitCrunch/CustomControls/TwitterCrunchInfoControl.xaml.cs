@@ -22,18 +22,24 @@ namespace TwitCrunch.CustomControls
     /// </summary>
     public partial class TwitterCrunchInfoControl : UserControl
     {
-        public TwitterCrunchInfoControl(string keyword)
+        private string keyword;
+        private DateTime? from;
+        private DateTime? until;
+        public TwitterCrunchInfoControl(string keyword, DateTime? from, DateTime? until)
         {
+            this.keyword = keyword;
+            this.from = from;
+            this.until = until;
             InitializeComponent();
-            InitCharts(keyword);
+            InitCharts();
         }
 
-        private void InitCharts(string keyword)
+        public void InitCharts()
         {
             //deleted the check on emptiness of the keywoard, because it's being checked before
             //see MainWindow
             TwitCrunchStatsContext stats = new TwitCrunchStatsContext(ConfigurationManager.ConnectionStrings["TwitCrunchDataBase"].ConnectionString);
-            DayStats daystats = new DayStats(stats.GetDayStatsFromKeyWord(keyword));
+            DayStats daystats = new DayStats(from, until, stats.GetDayStatsFromKeyWord(keyword));
             gStats.Children.Add(daystats);
         }
 
