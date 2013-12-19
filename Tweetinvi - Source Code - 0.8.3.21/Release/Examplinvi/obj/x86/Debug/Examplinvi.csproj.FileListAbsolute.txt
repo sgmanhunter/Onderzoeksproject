@@ -44,3 +44,6 @@ C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Cod
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\bin\Debug\TwitterToken.pdb
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\bin\Debug\UILibrary.pdb
 C:\Users\Administrator\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\obj\x86\Debug\Examplinvi.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\bin\Debug\Examplinvi.exe.config
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\obj\x86\Debug\Examplinvi.exe
+C:\Users\Admin\Documents\GitHub\Onderzoeksproject\Tweetinvi - Source Code - 0.8.3.21\Release\Examplinvi\obj\x86\Debug\Examplinvi.pdb

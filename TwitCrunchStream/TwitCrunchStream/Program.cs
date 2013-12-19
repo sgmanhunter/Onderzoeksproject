@@ -34,6 +34,7 @@ namespace TwitCrunchStream
 
             string[] zoekwoorden = new string[3];
             zoekwoorden[0] = "christmas";
+            zoekwoorden[1] = "london";
 
             sm.Init(zoekwoorden);
         }

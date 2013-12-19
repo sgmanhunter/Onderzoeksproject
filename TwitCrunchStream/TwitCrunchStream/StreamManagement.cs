@@ -47,15 +47,22 @@ namespace TwitCrunchStream
         // Track Keywords
         private void StreamFilterBasicTrackExample(IToken token, string[] zoekwoorden)
         {
+            string woord = "";
             try
             {
                 IFilteredStream stream = new FilteredStream();
 
                 stream.StreamStarted += (sender, args) => Console.WriteLine("Stream has started!");
+
+
                 foreach (string zoekwoord in zoekwoorden)
                 {
                     if (zoekwoord != null)
-                    stream.AddTrack("#" + zoekwoord);
+                    stream.AddTrack("#" + zoekwoord, tweet =>
+                    {
+                        //catchTweets(tweet, zoekwoord);
+                        woord = zoekwoord;
+                    });
                 }
 
                 stream.LimitReached += (sender, args) =>
@@ -64,7 +71,11 @@ namespace TwitCrunchStream
                 };
 
                 TwitterContext context = new TwitterContext();
-                if (!context.TryInvokeAction(() => stream.StartStream(token, tweet => catchTweets(tweet))))
+
+              
+
+
+                if (!context.TryInvokeAction(() => stream.StartStream(token, tweet => catchTweets(tweet, woord))))
                 {
                     Console.WriteLine("An Exception occured : '{0}'", context.LastActionTwitterException.TwitterWebExceptionErrorDescription);
                 }
@@ -78,10 +89,9 @@ namespace TwitCrunchStream
            
         }
 
-        private void catchTweets(ITweet tweet)
+        private void catchTweets(ITweet tweet, string zoekwoord)
         {
-            Console.WriteLine(tweet);
-            Tweet nieuweTweet = new Tweet(tweet);
+            Tweet nieuweTweet = new Tweet(tweet, zoekwoord);
             nieuweTweet.WriteToDatabase();
         }
     }
