@@ -32,7 +32,7 @@ namespace TwitCrunchStream
         {
             StreamManagement sm = new StreamManagement();
 
-            string[] zoekwoorden = new string[3];
+            string[] zoekwoorden = new string[34];
             //gsm merken
             zoekwoorden[0] = "Nokia";
             zoekwoorden[1] = "Samsung";
@@ -68,9 +68,9 @@ namespace TwitCrunchStream
             zoekwoorden[28] = "WoW";
             zoekwoorden[29] = "Diablo3";
             zoekwoorden[30] = "HEARTHSTONE";
-            zoekwoorden[31] = "WoW";
-            zoekwoorden[32] = "Diablo3";
-            zoekwoorden[33] = "HEARTHSTONE";
+            zoekwoorden[31] = "Heroes";
+            zoekwoorden[32] = "Warcraft";
+            zoekwoorden[33] = "CODGhosts";
 
             sm.Init(zoekwoorden);
         }
