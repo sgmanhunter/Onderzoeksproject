@@ -55,23 +55,54 @@ namespace TwitCrunchStream
 
             try
             {
-                System.Data.SqlClient.SqlConnection sqlConnection = new System.Data.SqlClient.SqlConnection(@"Data Source=BRU-SQL1.hogeschool-wvl.be;Initial Catalog=TwitterDB;Persist Security Info=True;User ID=TwitterDB;Password=pangilya;");
-                sqlConnection.Open();
-                SqlCommand sc = new SqlCommand("INSERT INTO dbo.tweets VALUES (@id, @text, @username, @createdAt, @tags, @zoekwoord)", sqlConnection);
-                sc.Parameters.AddWithValue("@id", this.id);
-                sc.Parameters.AddWithValue("@text", this.text);
-                sc.Parameters.AddWithValue("@username", this.creatorUserName);
-                sc.Parameters.AddWithValue("@createdAt", this.createdAt);
-                sc.Parameters.AddWithValue("@tags", this.tagString);
-                sc.Parameters.AddWithValue("@zoekwoord", this.zoekwoord);
-                sc.ExecuteNonQuery();
-                sqlConnection.Close();
+                SqlConnection sqlConnection = new SqlConnection(@"Data Source=BRU-SQL1.hogeschool-wvl.be;Initial Catalog=TwitterDB;Persist Security Info=True;User ID=TwitterDB;Password=pangilya;");
+                if (TryConnect(sqlConnection))
+                {
+                    sqlConnection.Open();
+                    SqlCommand sc = new SqlCommand("INSERT INTO dbo.tweets VALUES (@id, @text, @username, @createdAt, @tags, @zoekwoord)", sqlConnection);
+                    sc.Parameters.AddWithValue("@id", this.id);
+                    sc.Parameters.AddWithValue("@text", this.text);
+                    sc.Parameters.AddWithValue("@username", this.creatorUserName);
+                    sc.Parameters.AddWithValue("@createdAt", this.createdAt);
+                    sc.Parameters.AddWithValue("@tags", this.tagString);
+                    sc.Parameters.AddWithValue("@zoekwoord", this.zoekwoord);
+                    sc.ExecuteNonQuery();
+                    sqlConnection.Close();
+                }
             }
             catch (Exception e)
             {
-                throw new Exception("Mistake in the database ");
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\DA1\Desktop\Debug\log.txt", true))
+                {
+                    file.WriteLine("Error: database " + e.Message + " " + e.StackTrace);
+                }
+                //throw new Exception("Mistake in the database " + e.Message + " " + e.StackTrace);
             }
         }
+
+        //new function outside of your main function
+        private bool TryConnect(SqlConnection sqlConnection)
+        {
+            try 
+            {
+                sqlConnection.Open();
+                DataTable tblDatabases = sqlConnection.GetSchema("Databases");
+                sqlConnection.Close();
+            }
+            catch (SqlException e)
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\DA1\Desktop\Debug\log.txt", true))
+                {
+                    file.WriteLine("Error: database connection " + e.Message + " " + e.StackTrace);
+                }
+
+                return false;
+            }
+
+            return true;    
+        }
+
+
 
 
 

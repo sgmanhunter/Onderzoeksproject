@@ -36,6 +36,8 @@ namespace TwitCrunch.SQL
 
                 //Add paramters to connection string
                 com.Parameters.AddWithValue("@keyword",keyWord);
+                com.Parameters.AddWithValue("@datefrom", new DateTime(2013, 12, 22));
+                com.Parameters.AddWithValue("@dateuntil", new DateTime(2013, 12, 25));
 
                 SqlDataReader dr = com.ExecuteReader();
 

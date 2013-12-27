@@ -16,6 +16,7 @@ using Tweetinvi.Model;
 using TwitterToken;
 using System.Configuration;
 using System.Collections;
+using System.Data.SqlClient;
 
 
 namespace TwitCrunchStream
@@ -30,52 +31,62 @@ namespace TwitCrunchStream
 
         static void Main()
         {
-            StreamManagement sm = new StreamManagement();
+                AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
+                Console.WriteLine("App started");
+                StreamManagement sm = new StreamManagement();
 
-            string[] zoekwoorden = new string[34];
-            //gsm merken
-            zoekwoorden[0] = "Nokia";
-            zoekwoorden[1] = "Samsung";
-            zoekwoorden[2] = "Apple";
-            zoekwoorden[3] = "LG";
-            zoekwoorden[4] = "huawei";
-            zoekwoorden[5] = "HTC";
-            //films
-            zoekwoorden[6] = "hobbit";
-            zoekwoorden[7] = "thor";
-            zoekwoorden[8] = "dhoom3";
-            zoekwoorden[9] = "CaptainPhillips";
-            zoekwoorden[10] = "TurboFast";
-            zoekwoorden[11] = "EscapePlan";
-            zoekwoorden[12] = "WalkingWithDinosaurs";
-            zoekwoorden[13] = "CatchingFire";
-            zoekwoorden[14] = "47Ronin";
-            zoekwoorden[15] = "GrudgeMatch";
-            zoekwoorden[16] = "gravity";
-            zoekwoorden[17] = "waltermitty";
-            zoekwoorden[18] = "TheWolfOfWallStreet";
-            zoekwoorden[19] = "DevilsDue";
-            zoekwoorden[20] = "RideAlong";
-            zoekwoorden[21] = "SavingMrBanks";
+                string[] zoekwoorden = new string[34];
+                //gsm merken
+                zoekwoorden[0] = "Nokia";
+                zoekwoorden[1] = "Samsung";
+                zoekwoorden[2] = "Apple";
+                zoekwoorden[3] = "LG";
+                zoekwoorden[4] = "huawei";
+                zoekwoorden[5] = "HTC";
+                //films
+                zoekwoorden[6] = "hobbit";
+                zoekwoorden[7] = "thor";
+                zoekwoorden[8] = "dhoom3";
+                zoekwoorden[9] = "CaptainPhillips";
+                zoekwoorden[10] = "TurboFast";
+                zoekwoorden[11] = "EscapePlan";
+                zoekwoorden[12] = "WalkingWithDinosaurs";
+                zoekwoorden[13] = "CatchingFire";
+                zoekwoorden[14] = "47Ronin";
+                zoekwoorden[15] = "GrudgeMatch";
+                zoekwoorden[16] = "gravity";
+                zoekwoorden[17] = "waltermitty";
+                zoekwoorden[18] = "TheWolfOfWallStreet";
+                zoekwoorden[19] = "DevilsDue";
+                zoekwoorden[20] = "RideAlong";
+                zoekwoorden[21] = "SavingMrBanks";
 
-            // games
-            zoekwoorden[22] = "dayz";
-            zoekwoorden[23] = "starbound";
-            zoekwoorden[24] = "7DaysToDie";
-            zoekwoorden[25] = "Minecraft";
-            zoekwoorden[26] = "Godus";
-            zoekwoorden[27] = "LeagueOfLegends";
-            zoekwoorden[28] = "WoW";
-            zoekwoorden[29] = "Diablo3";
-            zoekwoorden[30] = "HEARTHSTONE";
-            zoekwoorden[31] = "Heroes";
-            zoekwoorden[32] = "Warcraft";
-            zoekwoorden[33] = "CODGhosts";
+                // games
+                zoekwoorden[22] = "dayz";
+                zoekwoorden[23] = "starbound";
+                zoekwoorden[24] = "7DaysToDie";
+                zoekwoorden[25] = "Minecraft";
+                zoekwoorden[26] = "Godus";
+                zoekwoorden[27] = "LeagueOfLegends";
+                zoekwoorden[28] = "WoW";
+                zoekwoorden[29] = "Diablo3";
+                zoekwoorden[30] = "HEARTHSTONE";
+                zoekwoorden[31] = "Heroes";
+                zoekwoorden[32] = "Warcraft";
+                zoekwoorden[33] = "CODGhosts";
 
-            sm.Init(zoekwoorden);
+                sm.Init(zoekwoorden);
+            
         }
 
-        
+
+        static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\DA1\Desktop\Debug\log.txt", true))
+            {
+                file.WriteLine("Error: main");
+            }
+        }
         
     }
 }
