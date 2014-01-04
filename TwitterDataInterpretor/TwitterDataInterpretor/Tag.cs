@@ -32,7 +32,16 @@ namespace TwitterDataInterpretor
 
         private void generateForecast(DateTime from, DateTime until)
         {
+           // this.from.AddDays(7);
+           // this.until.AddDays(14);
 
+            int resultOfCollectedMessages = messagesByDate.Count;
+
+            // gedeeld door het aantal (records / aantaldagen) +  aantalrecords mss werkt da zo wel
+            //int resultOfTheForecastMessages = resultOfCollectedMessages /
+            
+           
+            
         }
 
         private void CollectMessagesToCompareWithForecast(DateTime from, DateTime until)
