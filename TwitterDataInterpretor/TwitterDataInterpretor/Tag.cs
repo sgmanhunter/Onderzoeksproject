@@ -13,7 +13,7 @@ namespace TwitterDataInterpretor
         private DateTime until;
         private Database dbInstance = Database.GetInstance();
         private Dictionary<DateTime?, int?> messagesByDate;
-        private Dictionary<DateTime?, int?> forecastedMessagesByDate;
+        private Dictionary<DateTime, float> forecastedMessagesByDate = new Dictionary<DateTime, float>();
         private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod;
         private string report;
 
@@ -23,6 +23,7 @@ namespace TwitterDataInterpretor
             this.from = from;
             this.until = until;
             CollectMessages();
+            generateForecast(until, 5);
         }
 
         private void CollectMessages()
@@ -30,18 +31,46 @@ namespace TwitterDataInterpretor
             messagesByDate = dbInstance.GetMessagesByDateForTag(this.name, this.from, this.until);
         }
 
-        private void generateForecast(DateTime from, DateTime until)
+        private void generateForecast(DateTime from, int daysToForecast)
         {
-           // this.from.AddDays(7);
-           // this.until.AddDays(14);
+            //linear regression
+            float sumMessages = 0;
+            float squareSumMessages = 0;
+            float sumDays = 0;
+            float squareSumDays = 0;
+            float sumDaysMultipliedByMessages = 0;
+            int?[] messages = messagesByDate.Values.ToArray();
+            int[] days = new int[messages.Length];
 
-            int resultOfCollectedMessages = messagesByDate.Count;
+            int counter = 0;
+            foreach (int? messageCount in messages)
+            {
+                sumMessages += (float)messageCount;
+                squareSumMessages += (float)Math.Pow(Convert.ToDouble(messageCount), 2);
+                days[counter] = counter + 1;
+                sumDays += days[counter];
+                sumDaysMultipliedByMessages += (float)days[counter] * ((float)messageCount);
+                squareSumDays += (int)Math.Pow(Convert.ToDouble(sumDays), 2);
+                counter++;
+            }
 
-            // gedeeld door het aantal (records / aantaldagen) +  aantalrecords mss werkt da zo wel
-            //int resultOfTheForecastMessages = resultOfCollectedMessages /
+            float n = messages.Length;
+            float a = ((sumMessages * squareSumDays) - (sumDays * sumDaysMultipliedByMessages)) /
+                (n * (squareSumDays) - (int)Math.Pow(Convert.ToDouble(sumDays), 2));
+            float b = (n * (sumDaysMultipliedByMessages) - (sumDays * sumMessages)) /
+                (n * (squareSumDays) - (int)Math.Pow(Convert.ToDouble(sumDays), 2));
 
-          
+            DateTime testDate = from;
+            for (int i = 0; i < daysToForecast; i++)
+            {
+                testDate = testDate.AddDays(1);
+                float calculatedExtraDay = a+(b * (n + i));
+                forecastedMessagesByDate.Add(testDate, calculatedExtraDay);
+            }
+
+
             
+
         }
 
         private void CollectMessagesToCompareWithForecast(DateTime from, DateTime until)
@@ -66,6 +95,18 @@ namespace TwitterDataInterpretor
             {
                 report += String.Format("{0,-12}{1,-8}\n", dates[i].Value.ToShortDateString(), messages[i].Value.ToString());
             }
+
+            report += "forecasts:\n";
+            report += String.Format("{0,-12}{1,8}\n", "Date", "Messages");
+
+            DateTime[] forecastedDates = forecastedMessagesByDate.Keys.ToArray();
+            float[] forecastedMessages = forecastedMessagesByDate.Values.ToArray();
+
+            for (int i = 0; i < forecastedDates.Length; i++)
+            {
+                report += String.Format("{0,-12}{1,-8}\n", forecastedDates[i].ToShortDateString(), forecastedMessages[i].ToString());
+            }
+
 
             return report + "\n-----\n";
         }

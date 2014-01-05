@@ -10,7 +10,7 @@ namespace TwitterDataInterpretor
     {
         static void Main(string[] args)
         {
-            Report report = new Report(new DateTime(2013, 12, 22), new DateTime(2013, 12, 25));
+            Report report = new Report(new DateTime(2013, 12, 22), new DateTime(2014, 01, 5));
             Console.WriteLine(report);
             Console.ReadKey(true);
         }

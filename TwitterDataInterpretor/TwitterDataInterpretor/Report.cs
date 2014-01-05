@@ -23,10 +23,7 @@ namespace TwitterDataInterpretor
             AddTitle();
             AddTags();
             AddTagResultsToReport();
-            AddHeading();
-            AddForeCastTags();
-            AddForeCastResult();
-            FileOutPut();
+            WriteToDocument();
         }
 
         private void AddTitle()
@@ -34,31 +31,6 @@ namespace TwitterDataInterpretor
             this.report += "Datamining report\n\n";
         }
 
-        private void AddHeading()
-        {
-            this.report += "Forecast \n\n";
-        }
-
-        private void AddForeCastTags()
-        {
-            this.report += "A week forecast of the following Twitter tags: ";
-            foreach (string tag in dbInstance.GetAllTagsFromDatabase())
-            {
-                this.report += tag + ", ";
-                //tags.Add(new Tag(this.from, this.until.AddDays(7), tag));
-            }
-
-            report = report.Remove(report.Length - 2);
-            report += "\n \n";
-        }
-
-        private void AddForeCastResult()
-        {
-            //foreach (Tag tag in this.tags)
-            //{
-            //    report += tag.ToString();
-            //}
-        }
         private void AddTags()
         {
             this.report += "data collected of following Twitter tags: ";
@@ -83,9 +55,9 @@ namespace TwitterDataInterpretor
             }
         }
 
-        private void FileOutPut()
+        private void WriteToDocument()
         {
-            System.IO.File.WriteAllText(@"C:\TwitCrunchReport.doc", report);
+            System.IO.File.WriteAllText(@"D:\TwitCrunchReport.doc", report);
         }
 
         public override string ToString()
