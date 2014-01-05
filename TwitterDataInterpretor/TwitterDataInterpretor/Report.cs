@@ -49,7 +49,7 @@ namespace TwitterDataInterpretor
             }
 
             report = report.Remove(report.Length - 2);
-            report += "\n";
+            report += "\n \n";
         }
 
         private void AddForeCastResult()
@@ -69,9 +69,10 @@ namespace TwitterDataInterpretor
                 tags.Add(new Tag(this.from, this.until, tag));
             }
 
-            //remove last comma
+            //remove last comma           
             report = report.Remove(report.Length - 2);
-            report += "\n";
+            report += "\n \n";
+            
         }
 
         private void AddTagResultsToReport()
@@ -84,7 +85,7 @@ namespace TwitterDataInterpretor
 
         private void FileOutPut()
         {
-            System.IO.File.WriteAllText(@"C:\TwitCrunchReport.txt", report);
+            System.IO.File.WriteAllText(@"C:\TwitCrunchReport.doc", report);
         }
 
         public override string ToString()

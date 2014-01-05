@@ -39,8 +39,8 @@ namespace TwitterDataInterpretor
 
             // gedeeld door het aantal (records / aantaldagen) +  aantalrecords mss werkt da zo wel
             //int resultOfTheForecastMessages = resultOfCollectedMessages /
-            
-           
+
+          
             
         }
 
