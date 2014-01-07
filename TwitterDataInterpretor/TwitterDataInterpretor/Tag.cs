@@ -17,63 +17,54 @@ namespace TwitterDataInterpretor
         private Database dbInstance = Database.GetInstance();
 
         private Dictionary<DateTime?, int?> messagesByDate;
-
-        private Dictionary<DateTime, float> forecastedMessagesByDate = new Dictionary<DateTime, float>();
-        private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod = new Dictionary<DateTime?, int?>();
+        private Dictionary<DateTime, double> forecastedMessagesByDate;
+        private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod;
 
         public Tag(DateTime from, DateTime until, string name)
         {
             this.name = name;
             this.from = from;
             this.until = until;
-            messagesByDate = dbInstance.GetMessagesByDateForTag(this.name, this.from, this.until);
 
-            generateForecast(until, 5);
+            this.messagesByDate = dbInstance.GetMessagesByDateForTag(this.name, this.from, this.until);
+            this.forecastedMessagesByDate = new Dictionary<DateTime, double>();
 
-            CollectMessagesToCompareWithForecast(until, 5);
+            DateTime dateFromForecast = until.AddDays(1);
+            DateTime dateUntilForecast = until.AddDays(4);
+            this.realMessagesByDateForForcastedPeriod = dbInstance.GetMessagesByDateForTag(this.name, dateFromForecast, dateUntilForecast);
+
+            generateForecast(until, 4);
         }
 
+        //Holt-model
         private void generateForecast(DateTime from, int daysToForecast)
         {
-            //linear regression
-            float sumMessages = 0;
-            float squareSumMessages = 0;
-            float sumDays = 0;
-            float squareSumDays = 0;
-            float sumDaysMultipliedByMessages = 0;
+            double w = 0.5; //exponentiële-effeningsconstatnte  
+            double v = 0.7; //trendeffeningsconstante
+
+            //E[0] == E1 and T[0] == T1 are not defined
+            double[] E = new double[messagesByDate.Values.Count()]; //level equation
+            double[] T = new double[messagesByDate.Values.Count()]; //trend equation
             int?[] messages = messagesByDate.Values.ToArray();
-            int[] days = new int[messages.Length];
 
-            int counter = 0;
-            foreach (int? messageCount in messages)
+            //E2 = Y2 
+            E[1] = (double) messages[1];
+            //T2 = Y2 - Y1
+            T[1] = (double)messages[1] - (double)messages[0];
+
+            for (int i = 2; i < messages.Length; i++)
             {
-                sumMessages += (float)messageCount;
-                squareSumMessages += (float)Math.Pow(Convert.ToDouble(messageCount), 2);
-                days[counter] = counter + 1;
-                sumDays += days[counter];
-                sumDaysMultipliedByMessages += (float)days[counter] * ((float)messageCount);
-                squareSumDays += (int)Math.Pow(Convert.ToDouble(sumDays), 2);
-                counter++;
+                E[i] = (w * (double)messages[i]) + ((1 - w) * (E[i - 1] + T[i - 1]));
+                T[i] = (v * (E[i] - E[i - 1])) + ((1 - v) * T[i - 1]);
             }
 
-            float n = messages.Length;
-            float a = ((sumMessages * squareSumDays) - (sumDays * sumDaysMultipliedByMessages)) /
-                (n * (squareSumDays) - (int)Math.Pow(Convert.ToDouble(sumDays), 2));
-            float b = (n * (sumDaysMultipliedByMessages) - (sumDays * sumMessages)) /
-                (n * (squareSumDays) - (int)Math.Pow(Convert.ToDouble(sumDays), 2));
-
-            DateTime testDate = from;
-            for (int i = 0; i < daysToForecast; i++)
+            DateTime nextDay = from;
+            for (int i = 1; i <= daysToForecast; i++)
             {
-                testDate = testDate.AddDays(1);
-                float calculatedExtraDay = a+(b * (n + i));
-                forecastedMessagesByDate.Add(testDate, calculatedExtraDay);
+                nextDay = nextDay.AddDays(1);
+                double forecastedValue = E[E.Length - 1] + (i * T[T.Length - 1]);
+                forecastedMessagesByDate.Add(nextDay, forecastedValue);
             }
-        }
-
-        private void CollectMessagesToCompareWithForecast(DateTime from, int daysToForecast)
-        {
-                       
         }
 
         private string ShowCollectedData()
@@ -83,9 +74,9 @@ namespace TwitterDataInterpretor
             DateTime?[] dates = messagesByDate.Keys.ToArray();
             int?[] messages = messagesByDate.Values.ToArray();
             gatheredData += "data collected:\n";
-            gatheredData += String.Format("{0,-12}{1,8}\n", "Date", "Messages");
+            gatheredData += String.Format("{0,-12}{1,-8}\n", "Date", "Messages");
             for (int i = 0; i < dates.Length; i++)
-            {
+            {  
                 gatheredData += String.Format("{0,-12}{1,-8}\n", dates[i].Value.ToShortDateString(), messages[i].Value.ToString());
             }
 
@@ -96,14 +87,21 @@ namespace TwitterDataInterpretor
         {
             string forecast = "";
             DateTime[] forecastedDates = forecastedMessagesByDate.Keys.ToArray();
-            float[] forecastedMessages = forecastedMessagesByDate.Values.ToArray();
+            double[] forecastedMessages = forecastedMessagesByDate.Values.ToArray();
+            int?[] realMessages = realMessagesByDateForForcastedPeriod.Values.ToArray();
 
             forecast += "forecasts:\n";
-            forecast += String.Format("{0,-12}{1,8}\n", "Date", "Messages");
-
             for (int i = 0; i < forecastedDates.Length; i++)
             {
-                forecast += String.Format("{0,-12}{1,-8}\n", forecastedDates[i].ToShortDateString(), forecastedMessages[i].ToString());
+                forecast += String.Format("{0,-12}{1,-8}\n", "Date:", forecastedDates[i].ToShortDateString());
+                forecast += String.Format("{0,-12}{1,-8}\n", "Messages forecast:", Math.Round(forecastedMessages[i], 0));
+                
+                if (i < realMessages.Length)
+                {
+                    forecast += String.Format("{0,-12}{1,-8}", "Real amount of messages:", realMessages[i]);
+                }
+
+                forecast += "\n\n";
             }
 
             return forecast;
