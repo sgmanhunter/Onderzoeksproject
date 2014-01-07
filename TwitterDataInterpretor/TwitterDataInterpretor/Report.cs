@@ -20,10 +20,10 @@ namespace TwitterDataInterpretor
             this.from = from;
             this.until = until;
             tags = new ArrayList();
+
             AddTitle();
             AddTags();
             AddTagResultsToReport();
-            WriteToDocument();
         }
 
         private void AddTitle()
@@ -55,9 +55,9 @@ namespace TwitterDataInterpretor
             }
         }
 
-        private void WriteToDocument()
+        public void WriteToDocument()
         {
-            System.IO.File.WriteAllText(@"C:\TwitCrunchReport.doc", report);
+            System.IO.File.WriteAllText(@"D:\TwitCrunchReport.doc", report);
         }
 
         public override string ToString()
