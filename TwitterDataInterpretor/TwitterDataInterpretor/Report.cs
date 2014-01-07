@@ -57,7 +57,7 @@ namespace TwitterDataInterpretor
 
         private void WriteToDocument()
         {
-            System.IO.File.WriteAllText(@"D:\TwitCrunchReport.doc", report);
+            System.IO.File.WriteAllText(@"C:\TwitCrunchReport.doc", report);
         }
 
         public override string ToString()
