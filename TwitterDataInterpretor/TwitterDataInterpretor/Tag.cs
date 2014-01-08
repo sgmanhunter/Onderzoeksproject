@@ -17,8 +17,9 @@ namespace TwitterDataInterpretor
         private Database dbInstance = Database.GetInstance();
 
         private Dictionary<DateTime?, int?> messagesByDate;
+        private Dictionary<DateTime, double> averageMessagesByHourByDate; // <- array met gem. berichten per uur per dag
         private Dictionary<DateTime, double> forecastedMessagesByDate;
-        private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod;
+        private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod; // <- deze moeten ook naar gem. per uur geconverteerd worden er is nog geen functie daarvoor
 
         public Tag(DateTime from, DateTime until, string name)
         {
@@ -28,12 +29,25 @@ namespace TwitterDataInterpretor
 
             this.messagesByDate = dbInstance.GetMessagesByDateForTag(this.name, this.from, this.until);
             this.forecastedMessagesByDate = new Dictionary<DateTime, double>();
+            //hier forecastedMessagesByDate converteren
 
             DateTime dateFromForecast = until.AddDays(1);
             DateTime dateUntilForecast = until.AddDays(4);
             this.realMessagesByDateForForcastedPeriod = dbInstance.GetMessagesByDateForTag(this.name, dateFromForecast, dateUntilForecast);
+            //hier realMessagesByDateForForcastedPeriod converteren
 
             generateForecast(until, 4);
+        }
+
+        private convertToMessagesByHour() //TODO
+        {
+            int?[] messages = messagesByDate.Values.ToArray();
+            double[] messagesByHour = new double[messages.Length]; //+gemiddelde berekenen voor dagen waar we niet gecollected hebben
+
+            //voor iedere dag in forloop deze berekening
+            messagesByHour[0] = (double)messages[0] / 24 / 60;
+
+            //handmatig vermenigvuldigen met aantal minuten dat een applicatie gedraait heeft op een dag
         }
 
         //Holt-model
