@@ -17,7 +17,7 @@ namespace TwitterDataInterpretor
         private Database dbInstance = Database.GetInstance();
 
         private Dictionary<DateTime?, int?> messagesByDate;
-        private Dictionary<DateTime, double> averageMessagesByHourByDate; // <- array met gem. berichten per uur per dag
+        private Dictionary<DateTime?, double> averageMessagesByHourByDate = new Dictionary<DateTime?,double>(); // <- array met gem. berichten per uur per dag
         private Dictionary<DateTime, double> forecastedMessagesByDate;
         private Dictionary<DateTime?, int?> realMessagesByDateForForcastedPeriod; // <- deze moeten ook naar gem. per uur geconverteerd worden er is nog geen functie daarvoor
 
@@ -37,17 +37,48 @@ namespace TwitterDataInterpretor
             //hier realMessagesByDateForForcastedPeriod converteren
 
             generateForecast(until, 4);
+            convertToMessagesByHour();
         }
 
-        private convertToMessagesByHour() //TODO
+        private void convertToMessagesByHour() //TODO
         {
             int?[] messages = messagesByDate.Values.ToArray();
+            DateTime?[] dates = messagesByDate.Keys.ToArray();
             double[] messagesByHour = new double[messages.Length]; //+gemiddelde berekenen voor dagen waar we niet gecollected hebben
+            double[] messagesByMin = new double[messages.Length];
+            double[] aantalUren = new double[] {22.87,19.4,22.02,24,23.75,24,24,24,24,24,24,24,21.12,0,11.22};
+            
 
+            // wrm dat ik dat doet ... is om later makelijk te weten welke dag hvl uren dat die gedraaid heb , kan wss wel handig zijn
+            for (int j = 0; j < dates.Length; j++)
+            {
+
+               averageMessagesByHourByDate.Add(dates[j],aantalUren[j]);
+                
+            }
+
+            // dit was gwn om te lezen wat er in zat :p ok alles is goed gekoppeld
+            //foreach (KeyValuePair<DateTime?, double> pair in averageMessagesByHourByDate)
+            //{
+            //    Console.WriteLine("{0}, {1}",
+            //    pair.Key,
+            //    pair.Value);
+            //}
+            
             //voor iedere dag in forloop deze berekening
-            messagesByHour[0] = (double)messages[0] / 24 / 60;
+            //aantalUren = uren + ( minuten / 60)
+
+            for (int i = 0; i < aantalUren.Length - 1; i++)
+            {
+                messagesByHour[i] = (double)messages[i] / aantalUren[i];
+            }
 
             //handmatig vermenigvuldigen met aantal minuten dat een applicatie gedraait heeft op een dag
+
+            for (int i = 0; i < aantalUren.Length - 1; i++)
+            {
+                messagesByMin[i] = (double)messages[i] / (aantalUren[i] *60);
+            }
         }
 
         //Holt-model
